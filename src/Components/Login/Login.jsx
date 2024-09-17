@@ -24,16 +24,18 @@ const Login = () => {
     })
     }
 
-    const loginSubmit = async (e) => {
+    const loginSubmit = async () => {
         console.log("Logging in");
-        
-        e.preventDefault()
         try {
+            console.log("accessing url");
+            
             const response = await axiosConfig.post("/api/user/login",{
                 mail: loginField.mail,
                 password: loginField.password
             }); 
             console.log(response);
+            console.log("getiing response.....");
+            
             if(response && response.data && response.data.data){
                 toast.success(response.data.message)
                 const cookies = new Cookies()
