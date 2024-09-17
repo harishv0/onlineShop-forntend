@@ -24,7 +24,9 @@ const Login = () => {
     })
     }
 
-    const loginSubmit = async(e) => {
+    const loginSubmit = async (e) => {
+        console.log("Logging in");
+        
         e.preventDefault()
         try {
             const response = await axiosConfig.post("/api/user/login",{
@@ -69,7 +71,7 @@ const Login = () => {
                 <input type="password" name='password' value={loginField.password} onChange={onhandleChange}/>
             </div> 
             <div className='login_button'>
-                <button className='login_button_button'onClick={loginSubmit}>Login</button>
+                <button className='login_button_button' onClick={loginSubmit}>Login</button>
             </div>
             <p className='login_to_signup'>if you haven't account <span onClick={(e)=>setLogin(false)}>SignUp</span></p>
         </div>
