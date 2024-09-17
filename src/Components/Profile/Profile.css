@@ -1,0 +1,132 @@
+/* Profile background container */
+.profile {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5); /* Slight dark overlay for focus */
+}
+
+/* Profile container with white background and shadow */
+.profile_container {
+    width: 40%;
+    height: 80%; /* Adjusted height for better proportion */
+    background-color: rgba(255, 255, 255, 0.95); /* Slight opacity for modern look */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content starting from the top */
+    padding: 20px;
+    position: relative;
+}
+
+/* Cancel button */
+.cancel_button {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    color: #aaa;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cancel_button:hover {
+    color: #e74c3c; /* Red on hover */
+}
+
+
+/* Profile picture styling */
+.profile_pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Perfect circle */
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px;
+}
+
+/* Name section */
+.profile_name {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.profile_name_p {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+/* Email section */
+.profile_mail {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.profile_mail_p {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+/* Divider for profile sections */
+.profile_div {
+    width: 90%;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+
+/* Logout button */
+.profile_logout {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile_logout button {
+    width: 30%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #00cec9;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.profile_logout button:hover {
+    background-color: #00b8b0; /* Darker cyan on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow on hover */
+}

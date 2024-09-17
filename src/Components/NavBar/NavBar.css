@@ -1,0 +1,127 @@
+.page {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #e0eafc, #cfdef3); /* Soft gradient for modern look */
+}
+.main {
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    background-color: #333; /* Dark background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+}
+.navbar_container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product_all, .product_phone, .product_laptop {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: #555;
+    color: white;
+    border-radius: 15px;
+    margin-left: 15px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.product_all:hover, .product_laptop:hover, .product_phone:hover {
+    background-color: #6c5ce7;
+    box-shadow: 0 0 15px rgba(108, 92, 231, 0.7); /* Adds glow effect */
+    color: #fff;
+}
+/* Container for the search bar */
+.navbar_search {
+    position: relative;
+    width: 45%;
+    height: 40px;
+    display: flex;
+    align-items: center; /* Aligns items horizontally */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds depth with shadow */
+    padding-right: 15px; /* Adds space for Upload Details button */
+}
+
+/* Upload Details button (visible to admin) */
+.navbar_uploadDetails {
+    height: fit-content;
+    padding: 6px 12px;
+    background-color: #6c5ce7;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-left: auto; /* Pushes UploadDetails to the right */
+}
+
+.navbar_uploadDetails:hover {
+    background-color: #5b4bd4; /* Darker on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+}
+
+/* Search icon styling */
+.search_icon {
+    position: absolute;
+    left: 15px;
+    font-size: 20px;
+    color: #aaa;
+}
+
+/* Search input field */
+.navbar_search_input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    padding-left: 40px; /* Space for search icon */
+    font-size: 16px;
+    background-color: transparent;
+    outline: none;
+}
+
+/* Placeholder for non-admins */
+.navbar_span {
+    display: none; /* Hidden span for non-admins */
+}
+
+
+/* Cart and account icons */
+.navbar_cart, .navbar_account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar_cart:hover, .navbar_account:hover {
+    background-color: rgba(108, 92, 231, 0.7) /* Slight background highlight on hover */
+}
+
+.cart_icon, .account_icon {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Specific spacing for icons */
+.navbar_cart {
+    margin-right: 40px;
+}

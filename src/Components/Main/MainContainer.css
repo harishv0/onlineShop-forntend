@@ -1,0 +1,134 @@
+/* General styling for the product section */
+.product {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Styling for individual product containers */
+.product_container {
+    height: 280px;
+    width: 220px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover animation */
+}
+
+.product_container:hover {
+    transform: translateY(-10px); /* Lifts the product card slightly */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4); /* Shadow becomes more intense */
+}
+
+/* Image styling for product */
+.product_img {
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Divider line */
+.horizontal {
+    width: 90%;
+    height: 1px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+}
+
+/* Product name and price section */
+.product_namePrice {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.product_name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Darker text for better readability */
+}
+
+.product_price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff5733; /* Price highlighted with a bright color */
+    margin: 2px 0 0 0;
+    padding: 0;
+}
+
+/* Styling for the row of products */
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    padding: 10px;
+}
+.row::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Webkit browsers */
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.row {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.main_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Row container to hold the product row */
+.row_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Arrow styles */
+/* Arrow button styling */
+.left_arrow, .right_arrow {
+    font-size: 35px; /* Slightly larger for better visibility */
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    color: #007bff; /* Blue color for arrows */
+    border-radius: 50%; /* Makes the arrows circular */
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+}
+
+.left_arrow:hover, .right_arrow:hover {
+    color: #0056b3; /* Darker blue on hover */
+    background-color: rgba(0, 123, 255, 0.2); /* Soft background color change on hover */
+}
+
+/* Additional styling for positioning (optional based on your layout) */
+.left_arrow {
+    margin-left: 10px;
+}
+
+.right_arrow {
+    margin-right: 10px;
+}
+

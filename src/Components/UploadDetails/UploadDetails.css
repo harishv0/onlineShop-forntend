@@ -1,0 +1,142 @@
+/* Main upload container */
+.upload {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* Upload details container */
+.upload_details_container {
+    height: 98%;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Added padding for inner content */
+}
+
+/* Upload details */
+.upload_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto; /* Allows scrolling if content exceeds height */
+}
+
+/* Image upload box */
+.upload_image {
+    width: 40%;
+    height: 40%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Spacing from other elements */
+    position: relative;
+}
+
+/* Browse buttons */
+.upload_browse, 
+.change_browse {
+    width: 50%;
+    padding: 8px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.upload_browse:hover, 
+.change_browse:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.upload_product{
+    height: 15%;
+    text-indent: 8px;
+}
+/* Input focus effect */
+.upload_type:focus, 
+.upload_name:focus, 
+.upload_price:focus, 
+.upload_description:focus, 
+.upload_properties:focus {
+    border: none;
+    border-bottom: 2px solid #007bff; /* Blue focus border */
+    outline: none;
+}
+
+/* Input fields */
+.upload_type, 
+.upload_name, 
+.upload_price, 
+.upload_description, 
+.upload_properties {
+    width: 80%;
+    height: 40px;
+    margin: 15px 0;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd; /* Soft border */
+    font-size: 16px; /* More readable font size */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Upload button */
+.upload_button {
+    width: 30%;
+    height: 13%;
+    border-radius: 8px;
+    background-color: #6c5ce7;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.upload_button:hover {
+    background-color: #5b4cd2; /* Darker color on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .upload_details_container {
+        width: 90%;
+        height: 90%;
+    }
+    .upload_image {
+        width: 60%;
+        height: 30%;
+    }
+    .upload_type, 
+    .upload_name, 
+    .upload_price, 
+    .upload_description, 
+    .upload_properties {
+        width: 90%;
+    }
+    .upload_button {
+        width: 60%;
+    }
+}
