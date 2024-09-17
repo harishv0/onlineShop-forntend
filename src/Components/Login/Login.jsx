@@ -6,6 +6,7 @@ import SignUp from '../SignIn/SignUp'
 import axiosConfig from '../../api/axiosConfig'
 import { toast } from 'react-toastify'
 import Cookies from 'universal-cookie'
+import axios from 'axios'
 const Login = () => {
     const[isLogin, setLogin] = useState(true)
     const navigate = useNavigate()
@@ -29,7 +30,7 @@ const Login = () => {
         try {
             console.log("accessing url");
             
-            const response = await axiosConfig.post("/api/user/login",{
+            const response = await axios.post("https://onlineshop-crl5.onrender.com/api/user/login",{
                 mail: loginField.mail,
                 password: loginField.password
             }); 
