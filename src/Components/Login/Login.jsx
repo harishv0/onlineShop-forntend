@@ -20,7 +20,7 @@ const Login = () => {
     const onhandleChange = (e) => {
         setLoginField({
         ...loginField,
-        [e.target.name]: e.target.value || ""
+        [e.target.name]: e.target.value
     })
     }
 
@@ -66,11 +66,11 @@ const Login = () => {
             </div>
             <div className='login_mail'>
                 <label className='login_label-mail' defaultValue="Email">Email</label>
-                <input type="text" name='mail' value={loginField.mail} onChange={onhandleChange}/>
+                <input type="text" name='mail' value={loginField.mail || ""} onChange={onhandleChange}/>
             </div>  
             <div className='login_password'>
                 <label className="login_label-password">Password</label>
-                <input type="password" name='password' value={loginField.password} onChange={onhandleChange}/>
+                <input type="password" name='password' value={loginField.password || ""} onChange={onhandleChange}/>
             </div> 
             <div className='login_button'>
                 <button className='login_button_button' onClick={loginSubmit}>Login</button>

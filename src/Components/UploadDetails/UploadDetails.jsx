@@ -32,7 +32,7 @@ useEffect(() => {
   const onhandleChange =(e) =>{
     setData({
       ...data,
-      [e.target.name] : e.target.name === 'price' ? parseFloat(e.target.value) : e.target.value
+      [e.target.name] : e.target.value
     })
   }
   const handleFileClick = () => {
