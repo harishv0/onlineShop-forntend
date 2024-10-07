@@ -12,7 +12,7 @@ const Profile = ({setIsProfile}) => {
   const[file, setFile] = useState();
   const[selectedImage, setSelectedImage] = useState();
   
-
+  
   const handleFileClick = () => {
     fileInputRef.current.click();
   }
@@ -27,7 +27,9 @@ const Profile = ({setIsProfile}) => {
       }
       fileReader.readAsDataURL(file)
     }
+    
   }
+  
 
   const getUser = async() => {
       const response = await axiosConfig.get("/api/user/profile",{
@@ -37,6 +39,8 @@ const Profile = ({setIsProfile}) => {
       });
       const data = response.data;
       setUser(data);
+      console.log(data);
+      
   }
   const handleLogOut = () => {
     cookiesVal.remove('response');
@@ -50,8 +54,34 @@ const Profile = ({setIsProfile}) => {
 
   },[])
   
-
-
+  const uploadProfile = async() =>{
+    if(!file){
+      alert('Please select a file first');
+      return;
+    }
+    const formdata = new FormData();
+    formdata.append("mail", user?.mail)
+    formdata.append("image", file)
+    try {
+      const data = await axiosConfig.post("/api/user/profilePhoto",formdata,{
+      headers : {
+        'Content-Type' : 'multipart/form-data'
+      }
+    })
+    console.log("Upload Successfully", data.data.data.profile)
+    alert("upload successfully")
+    } catch (error) {
+      console.error("Error uploading profile photo", error);
+      alert("not uploaded")
+    }
+    getUser();
+  }
+  useEffect(()=>{
+  if(file){
+    uploadProfile();
+    }
+  }
+  ,[file])
   return (
     <div className='profile'>
       <div className='profile_container'>
@@ -63,9 +93,24 @@ const Profile = ({setIsProfile}) => {
           <input
            type="file" 
            ref={fileInputRef}
-           style={{display:'none'}}/>
-          <img src={selectedImage} alt="" onChange={handleImage}/>
-          <button onClick={handleFileClick}>Change</button>
+           style={{display:'none'}}
+           onChange={handleImage}/>
+           {
+            user?.profile ? (
+              <>
+                <img className='profile_image' onClick={handleFileClick} src={user?.profile} style={{height:'100px', width:'100px'}}/>
+                <button className='profile-change_browse'onClick={handleFileClick}>Change</button>
+              </>
+            ) : (
+                selectedImage ? (
+                  <>
+                    <img className='profile_image' onClick={handleFileClick}src={selectedImage} style={{height:'100px', width:'100px'}}/>
+                    <button className='profile-change_browse'onClick={handleFileClick}>Change</button>
+                </>):(
+                  <button className='profile-upload_browse'onClick={handleFileClick}>Browse Photo</button>
+                )
+            )
+           }
         </div>
         <div className='profile_name'>
           <p className="profile_name_p">{user?.name}</p>

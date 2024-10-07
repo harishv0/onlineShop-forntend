@@ -43,7 +43,7 @@ useEffect(() => {
     const file = e.target.files[0];
     setFile(file);
     if (file) {
-      const fileReader = new FileReader(); // create a new FileReader instance
+      const fileReader = new FileReader();
       fileReader.onloadend = () => {
         const image  = fileReader.result;
         setSelectedImage(image);
@@ -52,7 +52,7 @@ useEffect(() => {
           image : image
         }))
       };
-      fileReader.readAsDataURL(file); // read the selected file as a Data URL
+      fileReader.readAsDataURL(file);
     }
   };
   const handleUpload = async(e) => {

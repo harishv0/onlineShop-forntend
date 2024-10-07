@@ -18,8 +18,6 @@ const handleClick = () => {
   navigate('/details')
 }
 
-
-console.log(value)
   return (
     <Box gap={10}className='product'>
       <div className='product_container'>

@@ -65,7 +65,7 @@
 .product_price {
     font-size: 16px;
     font-weight: bold;
-    color: #ff5733; /* Price highlighted with a bright color */
+    color: green; /* Price highlighted with a bright color */
     margin: 2px 0 0 0;
     padding: 0;
 }
@@ -86,8 +86,8 @@
 
 /* Hide scrollbar for IE, Edge, and Firefox */
 .row {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
 }
 
 
@@ -132,4 +132,17 @@
 .right_arrow {
     margin-right: 10px;
 }
-
+.loader-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.item_not_found{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}

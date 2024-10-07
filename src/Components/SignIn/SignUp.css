@@ -133,3 +133,24 @@
     color: #36c3ff;
     cursor: pointer;
 }
+@media(max-width: 480px){
+    .signup_container{
+        width: 70%;
+        padding: 10px;
+        margin-top: 100px;
+    }
+    .signup_head{
+        font-size: 25px;
+    }
+    .signup_name, .signup_email, .signup_password{
+        font-size: 12px;
+        bottom: 38px;
+    }
+    .signup_name input, .signup_email input, .signup_password input{
+        font-size: 12px;
+        height: 35px; 
+    }
+    .signup_button_button{
+        font-size: 14px;
+    }
+}

@@ -1,21 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import MainContainer from './MainContainer';
 import axiosConfig from '../../api/axiosConfig';
-import { flushSync } from 'react-dom';
-
+import { ClipLoader } from 'react-spinners';
+import { height } from '@mui/system';
 const Main = ({searchQuery,show}) => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false)
   const[filterted, setFiletered] = useState([]);
-  const[productTypes, setProductType] = useState()
   const rowRefs = useRef([]); // Store references for each row
 
   // Fetch data from API
   const getData = async () => {
+    setLoading(true);
     try {
-      const response = await axiosConfig.get("/api/details/allDetails");
+      const response = await axiosConfig.get("/api/details/allDetails",{
+        timeout : 5000,
+      });
       setData(response.data.data);
     } catch (error) {
       console.error(error);
+    }finally{
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   };
 
@@ -78,24 +85,33 @@ const Main = ({searchQuery,show}) => {
 
   return (
     <div className='main_container'>
-      {chunkData.length > 0 ? (
-        chunkedData.map((rowItems, rowIndex) => (
-          <div key={rowIndex} className='row_container'>
-            <p className='left_arrow' onClick={() => leftScroll(rowIndex)}>&#10094;</p>
-            <div
-              className='row'
-              ref={(el) => (rowRefs.current[rowIndex] = el)}
-            >
-              {rowItems.map((item, index) => (
-                <MainContainer key={index} object={item} searchQuery={searchQuery}/>
-              ))}
-            </div>
-            <p className='right_arrow' onClick={() => rightScroll(rowIndex)}>&#10095;</p>
+      {
+        loading ? (
+          <div className="loader-container">
+              <ClipLoader loading={loading} size={50} />
           </div>
-        ))
-       ) : (<p className='item_not_found'>Item is not found</p>)
-      }
+      ) : 
       
+         (
+            chunkedData.length > 0 ? (
+            chunkedData.map((rowItems, rowIndex) => (
+              <div key={rowIndex} className='row_container'>
+                <p className='left_arrow' onClick={() => leftScroll(rowIndex)}>&#10094;</p>
+                <div
+                  className='row'
+                  ref={(el) => (rowRefs.current[rowIndex] = el)}
+                >
+                  {rowItems.map((item, index) => (
+                    <MainContainer key={index} object={item} searchQuery={searchQuery}/>
+                  ))}
+                </div>
+                <p className='right_arrow' onClick={() => rightScroll(rowIndex)}>&#10095;</p>
+              </div>
+            ))
+          ) : (<p className='item_not_found'>Item is not found</p>)
+          
+          )
+    }
     </div>
   );
 };

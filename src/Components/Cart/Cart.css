@@ -63,7 +63,7 @@
 .remove {
     height: fit-content;
     width: fit-content;
-    margin-left: 140px;
+    margin-left: 110px;
     font-size: 24px; 
     background-color: #f44336; 
     color: #fff; 
@@ -85,7 +85,7 @@
     text-overflow: ellipsis;
     padding: 10px; 
 }
-cart_name {
+.cart_name {
     font-size: 22px; 
     margin: 0;
     color: #333;
@@ -97,4 +97,38 @@ cart_name {
     font-size: 20px;
     margin: 5px 0;
     color: #555; 
+}
+@media (max-width: 480px) {
+    .home, .backward_cart {
+        font-size: 30px;
+        left: 10px; /* Adjusted to fit mobile screens */
+    }
+
+    .cart_top {
+        font-size: 16px;
+    }
+
+    .cart_inn {
+        width: 100%;
+        padding: 10px;
+    }
+    .cart_image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cart_center {
+        font-size: 7px;
+        overflow: auto;
+    }
+    .cart_name{
+        font-size: 12px;
+    }.cart_price{
+        font-size: 12px;
+    }
+    .remove {
+        font-size: 16px;
+        padding: 5px;
+        margin-left: 10px;
+    }
 }

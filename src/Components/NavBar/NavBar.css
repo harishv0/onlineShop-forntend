@@ -27,6 +27,10 @@
     justify-content: space-between;
     align-items: center;
 }
+.navbar_links{
+    display: flex;
+    gap: 20px;
+}
 .product_all, .product_phone, .product_laptop {
     cursor: pointer;
     padding: 8px 16px;
@@ -121,7 +125,72 @@
     color: #fff;
 }
 
-/* Specific spacing for icons */
 .navbar_cart {
     margin-right: 40px;
 }
+.navbar_menu-icon {
+    display: none;
+}
+.mobile_menu div{
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .navbar_menu-icon {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        z-index: 15;
+    }
+    .navbar_links {
+        display: none;
+    }
+
+    .navbar_links.show {
+        display: block;
+        position: absolute;
+        transform: translateY(-50%);
+        align-items: center;
+        top: 130px;
+        width: 40%;
+        height: auto;
+        background-color: #333;
+        text-align: center;
+    }
+
+    .mobile_menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 11;
+    }
+
+    .navbar_search{
+        margin-left: 100px;
+        height: 40px;
+        width: 300px;
+    }
+    .navbar_search input{
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .navbar_cart{
+        margin-left: 30px;
+    }
+    .navbar_uploadDetails{
+        width: 80px;
+        font-size: 8px;
+        padding-left: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+

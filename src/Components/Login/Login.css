@@ -117,3 +117,30 @@
     color: #36c3ff;
     cursor: pointer;
 }
+@media (max-width: 480px) {
+    .login_container {
+        width: 70%;
+        padding: 10px;
+        margin-top: 100px;
+    }
+
+    .login_head {
+        font-size: 25px;
+    }
+
+    .login_button_button {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .login_label-mail, .login_label-password {
+        font-size: 12px;
+        bottom: 38px;
+
+    }
+
+    .login_mail input, .login_password input {
+        font-size: 15px;
+        height: 35px;
+    }
+}
